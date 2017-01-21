@@ -3524,11 +3524,11 @@ class ZendeskAPI(object):
         api_path = api_path.format(user_id=user_id, id=id)
         return self.call(api_path, method="DELETE", **kwargs)
 
-    def user_group_membership_make_default(self, user_id, membership_id, data, **kwargs):
+    def user_group_membership_make_default(self, user_id, membership_id, **kwargs):
         "https://developer.zendesk.com/rest_api/docs/core/group_memberships#set-membership-as-default"
         api_path = "/api/v2/users/{user_id}/group_memberships/{membership_id}/make_default.json"
         api_path = api_path.format(user_id=user_id, membership_id=membership_id)
-        return self.call(api_path, method="PUT", data=data, **kwargs)
+        return self.call(api_path, method="PUT", **kwargs)
 
     def user_group_membership_show(self, user_id, id, **kwargs):
         "https://developer.zendesk.com/rest_api/docs/core/group_memberships#show-membership"
